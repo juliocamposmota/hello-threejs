@@ -20,7 +20,7 @@ titleSpan.style.color = '#bbbbbb';
 
 titleH1.appendChild(titleSpan);
 
-const title = new CSS2DObject(titleH1);
-title.position.set(0, 1, 0);
+const titleCSS2D = new CSS2DObject(titleH1);
+titleCSS2D.position.set(0, 1, 0);
 
-export { titleRenderer, title };
+export { titleRenderer, titleCSS2D };

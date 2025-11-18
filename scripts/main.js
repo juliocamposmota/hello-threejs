@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { ring } from './ring';
-import { title, titleRenderer } from './title';
+import { titleCanvas } from './title-canvas';
+import { titleCSS2D, titleRenderer } from './title-css2d';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, (window.innerWidth / window.innerHeight), 0.1, 1000);
@@ -17,11 +18,13 @@ const cube= new THREE.Mesh(geometry, material);
 
 scene.add(cube);
 scene.add(ring);
-ring.add(title);
+scene.add(titleCanvas);
+ring.add(titleCSS2D);
 
 camera.position.z = 5;
 cube.position.x = -1;
 ring.position.x = 1;
+titleCanvas.position.set(-1.5, 2.6, 0.3);
 
 function animate() {
   cube.rotation.x += 0.01;
